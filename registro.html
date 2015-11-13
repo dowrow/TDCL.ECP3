@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+
+  <title>Registro - Pádel UPM</title>
+
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+  crossorigin="anonymous"/>
+
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+  integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX"
+  crossorigin="anonymous"/>
+
+  <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+
+  <!-- Main menu -->
+  <menu>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+
+        <!-- Logo -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            <img src="img/upm.jpg">
+            Pádel UPM
+          </a>
+
+          <!-- Hamburger menu -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#options">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+
+        <!-- Options -->
+        <div id="options" class="collapse navbar-collapse">
+
+          <!-- Left -->
+          <div class="navbar-left">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a>
+              </li>
+              <li>
+                <a href="servicios.html"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Servicios</a>
+              </li>
+              <li>
+                <a href="instalaciones.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Instalaciones</a>
+              </li>
+              <li>
+                <a href="reservar.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Reservar</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right -->
+          <div class="navbar-right">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="registro.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Registro</a>
+              </li>
+              <li>
+                <a href="login.html"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </menu>
+
+  <!-- Content -->
+  <section class="container">
+    <section class="panel panel-default">
+      <div class="panel-body">
+        <h1>Registro de usuario</h1>
+        <form>
+
+          <div class="row">
+              <label class="col-md-5 text-right">Usuario:</label>
+              <input class="col-md-4" type="text" placeholder="Identificador de usuario"/>
+          </div>
+
+          <div class="row">
+              <label class="col-md-5 text-right">Correo:</label>
+              <input class="col-md-4" type="email" placeholder="Email"/>
+          </div>
+            <div class="row">
+              <label class="col-md-5 text-right">Clave:</label>
+              <input class="col-md-4" type="password" placeholder="Clave"/>
+            </div>
+            <div class="row">
+              <label class="col-md-5 text-right">Repita clave:</label>
+              <input class="col-md-4" type="password" placeholder="Repita la clave"/>
+            </div>
+            <div class="row">
+              <label class="col-md-5 text-right">Fecha de nacimiento</label>
+              <input class="col-md-4" type="date"/>
+            </div>
+            <div class="row">
+              <input class="col-md-offset-8 col-md-1" type="submit"/ value="Registrar">
+            </div>
+        </form>
+      </div>
+      <section>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+  integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+  crossorigin="anonymous">
+  </script>
+
+</body>
+</html>
