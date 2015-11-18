@@ -1,3 +1,5 @@
+/*globals window, $*/
+
 (function (window, $) {
 
     'use strict';
