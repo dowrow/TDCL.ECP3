@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
 
-    <title>Instalaciones - Pádel UPM</title>
+    <title>Reservar - Pádel UPM</title>
 
     <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
@@ -55,10 +55,10 @@
                             <li>
                                 <a href="servicios.html"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Servicios</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="instalaciones.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Instalaciones</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="reservar.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Reservar</a>
                             </li>
                         </ul>
@@ -84,38 +84,26 @@
     <section class="container">
 
         <!-- Parallax header -->
-        <div class="parallax instalaciones"></div>
+        <div class="parallax reservar"></div>
         <header class="jumbotron container">
             <div class="row">
                 <div class="col-md-10 col-sm-9 col-xs-6">
-                    <h1>Instalaciones</h1>
-                    <p class="lead">Todo sobre nuestra insfraestructura</p>
+                    <h1>Reservar</h1>
+                    <p class="lead">Asegúrate de que tu pista favorita estará disponible</p>
                 </div>
             </div>
         </header>
 
-        <section class="row">
+        <form>
 
-            <article class="row">
-                <br/>
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12155.641688931142!2d-3.6304401!3d40.3886779!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x17812255cddaf648!2sCampus+Sur+UPM!5e0!3m2!1sen!2ses!4v1447178409522"
-                class="map col-md-6 col-sm-6" height="450" frameborder="0" style="border:0" allowfullscreen>
-            </iframe>
-
-            <div class="col-md-5 col-sm-5 lead">
-                <p>Disponemos de:</p>
-                <ul>
-                    <li>4 pistas de cristal cubiertas.</li>
-                    <li>3 pistas de cistal semicubiertas.</li>
-                    <li>3 pistas de cemento exteriores.</li>
-                    <li>2 pistas de tenis.</li>
-                    <li>Vestuarios completos.</li>
-                    <li>Cafetería con terraza.</li>
-                </ul>
+            <div class="row">
+                <label class="col-md-1 col-sm-2 col-xs-3 col-xs-offset">Fecha: </label>
+                <input class="col-md-2 col-sm-4 col-xs-8" type="date"/>
             </div>
-
-        </article>
+            <div class="row">
+                <button class="col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-4 col-xs-10 col-xs-offset-1">Buscar</button>
+            </div>
+        </form>
     </section>
 </section>
 </section>

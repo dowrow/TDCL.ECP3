@@ -28,6 +28,16 @@ body, .parallax, .panel {
     background-size: cover;
 }
 
+.parallax.instalaciones {
+    background: url('/img/installations.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.parallax.reservar {
+    background: url('/img/calendar.jpg') no-repeat center center;
+    background-size: cover;
+}
+
 .jumbotron {
   width: 100%;
   height: 350px;
