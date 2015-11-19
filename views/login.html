@@ -1,0 +1,28 @@
+
+<section ng-controller="LoginController" class="panel panel-default">
+    <div class="panel-body">
+        <h1>Acceso: Usuario o correo</h1>
+        <form class="form-horizontal col-md-4 col-md-offset-4">
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input ng-model="usuario" id="usuario" class="form-control" type="text" placeholder="Identificador de usuario"/>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input ng-model="correo" id="correo" class="form-control" type="email" placeholder="Email"/>
+            </div>
+            <div class="form-group">
+                <label for="clave">Clave:</label>
+                <input ng-model="clave" id="clave" class="form-control" type="password" placeholder="Clave"/>
+            </div>
+            <div class="form-group">
+                <input ng-click="login()" class="form-control btn btn-primary" type="submit"/ value="Acceder">
+            </div>
+            <div id="error" class="hidden form-group alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span id="mensaje">{{ mensaje }}</span>
+            </div>
+        </form>
+    </div>
+</section>

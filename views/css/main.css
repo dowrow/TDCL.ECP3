@@ -19,22 +19,22 @@ body, .parallax, .panel {
 }
 
 .parallax.index {
-    background: url('/img/padel.jpg') no-repeat center center;
+    background: url('/views/img/padel.jpg') no-repeat center center;
     background-size: cover;
 }
 
 .parallax.servicios {
-    background: url('/img/services.jpg') no-repeat center center;
+    background: url('/views/img/services.jpg') no-repeat center center;
     background-size: cover;
 }
 
 .parallax.instalaciones {
-    background: url('/img/installations.jpg') no-repeat center center;
+    background: url('/views/img/installations.jpg') no-repeat center center;
     background-size: cover;
 }
 
 .parallax.reservar {
-    background: url('/img/calendar.jpg') no-repeat center center;
+    background: url('/views/img/calendar.jpg') no-repeat center center;
     background-size: cover;
 }
 

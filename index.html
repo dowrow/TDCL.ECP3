@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
 
-    <title>Inicio - Pádel UPM</title>
+    <title>Pádel UPM</title>
 
     <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
@@ -17,20 +17,20 @@
     integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX"
     crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="views/css/main.css">
 
 </head>
 <body>
 
     <!-- Main menu -->
-    <menu>
+    <menu ng-controller="MenuController">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
 
                 <!-- Logo -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="img/upm.jpg">
+                    <a class="navbar-brand" href="#/">
+                        <img src="views/img/upm.jpg">
                         Pádel UPM
                     </a>
 
@@ -49,17 +49,17 @@
                     <!-- Left -->
                     <div class="navbar-left">
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a>
+                            <li ng-class="{ active: isActive('/')}">
+                                <a href="#/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a>
                             </li>
-                            <li>
-                                <a href="servicios.html"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Servicios</a>
+                            <li ng-class="{ active: isActive('/servicios')}">
+                                <a href="#/servicios"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Servicios</a>
                             </li>
-                            <li>
-                                <a href="instalaciones.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Instalaciones</a>
+                            <li ng-class="{ active: isActive('/instalaciones')}">
+                                <a href="#/instalaciones"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Instalaciones</a>
                             </li>
-                            <li>
-                                <a href="reservar.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Reservar</a>
+                            <li ng-class="{ active: isActive('/reservar')}">
+                                <a href="#/reservar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Reservar</a>
                             </li>
                         </ul>
                     </div>
@@ -67,11 +67,11 @@
                     <!-- Right -->
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li>
-                                <a href="registro.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Registro</a>
+                            <li ng-class="{ active: isActive('/registro')}">
+                                <a href="#/registro"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Registro</a>
                             </li>
-                            <li>
-                                <a href="login.html"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a>
+                            <li ng-class="{ active: isActive('/login')}">
+                                <a href="#/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> {{ loginText }}</a>
                             </li>
                         </ul>
                     </div>
@@ -81,65 +81,7 @@
     </menu>
 
     <!-- Content -->
-    <section class="container">
-
-        <!-- Parallax header -->
-        <div class="parallax index"></div>
-        <header class="jumbotron container">
-            <div class="row">
-                <img src="img/upm.jpg" class="col-md-2 col-sm-3 col-xs-6"/>
-                <div class="col-md-10 col-sm-9 col-xs-6">
-                    <h1>Pádel UPM</h1>
-                    <p class="lead">El club universitario más dinámico del circuito</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Text -->
-        <section class="row">
-            <article class="col-md-4 col-sm-4 col-xs-12">
-                <h2>Clases<br/><br/></h2>
-                <p class="lead justified">
-                    El conjunto de monitores más cualificados se encargará de darte la formación en cuanto a técnica requerida en este deporte.
-                    Las clases prácticas te permitirán interiorizar los movimientos como si fuesen naturales.
-                </p>
-                <br/>
-                <p class="lead justified">
-                    Las clases colectivas convierten las clases en un espacio dinámico en el que jugar se convierte en una actividad placentera y divertida.
-                </p>
-                <br/>
-                <p class="text-center">
-                    <img class="shady-circle" src="img/balls.jpg"/>
-                </p>
-            </article>
-
-            <article class="col-md-4 col-sm-4 col-xs-12">
-                <h2>Entrenamientos personalizados</h2>
-                <p class="lead justified">
-                    Si te sientes un campeón, de verdad lo eres o simplemente quieres avanzar rápidamente en la técnica que rodea a este deporte te podemos configurar sesiones de entrenamiento a tu medida con un entrenador personal que se encargará de:
-                </p>
-                <br/>
-                <ul class="lead justified">
-                    <li>Enseñarte la técnica adecuada para mejorar tus golpes.</li>
-                    <li>Enseñarte a combinar la potencia con la técnica.</li>
-                    <li>Mostrarte cómo mejorar el rendimiento en equipo.</li>
-                    <li>Explicarte cómo utilizar la presión de los campeonatos en tu beneficio.</li>
-                </ul>
-            </article>
-
-            <article class="col-md-4 col-sm-4 col-xs-12">
-                <h2>Campeonatos<br/><br/></h2>
-                <p class="lead justified">
-                    El club organiza campeonatos periódicos en los que te puedes divertir al mismo tiempo que mejoras en el deporte.
-                    Tenemos campeonatos de un día, de fin de semana y ligas regulares. Puedes participar en los torneos masculinos, femeninos y mixtos.
-                </p>
-                <br/>
-                <p class="text-center">
-                    <img class="shady-circle" src="img/trophy.jpg"/>
-                </p>
-
-            </article>
-        </section>
+    <section class="container" ng-view>
     </section>
 
     <footer class="container-fluid">
@@ -153,7 +95,8 @@
     integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
     crossorigin="anonymous">
     </script>
-    <script src="js/parallax.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-beta.2/angular-route.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
