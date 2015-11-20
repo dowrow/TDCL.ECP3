@@ -18,6 +18,8 @@ app.config(function ($routeProvider) {
         })
         .when('/registro', {
             templateUrl : '/views/registro.html',
+            controller: 'RegistroController'
+
         })
         .when('/reservar', {
             templateUrl : '/views/reservar.html',
