@@ -14,7 +14,7 @@ var DragAndDrop = {
 };
 
 $(function () {
-    'use strict'
+    'use strict';
     $('#caja2').on('drop', DragAndDrop.drop);
     $('#caja2').on('dragover', DragAndDrop.allowDrop);
 });

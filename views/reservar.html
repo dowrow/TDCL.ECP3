@@ -19,10 +19,10 @@
 <br/>
 
 <form class="form-group">
-      <label for="pistas">Seleccione una opción:</label>
-      <select multiple class="form-control" id="pistas">
+    <label for="pistas">Seleccione una opción:</label>
+    <select multiple class="form-control" id="pistas">
         <option ng-repeat="pista in pistas">Reservar la pista número {{ pista.courtId }} - A las {{ pista.date | date : 'shortTime' }}</option>
-      </select>
+    </select>
 </form>
 
 <script src="views/js/parallax.js"></script>
