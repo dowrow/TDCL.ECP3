@@ -23,6 +23,7 @@ app.config(function ($routeProvider) {
         })
         .when('/reservar', {
             templateUrl : '/views/reservar.html',
+            controller: 'ReservaController'
         })
         .when('/servicios', {
             templateUrl : '/views/servicios.html',

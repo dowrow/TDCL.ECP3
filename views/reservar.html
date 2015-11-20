@@ -1,17 +1,28 @@
-        <!-- Parallax header -->
-        <div class="parallax reservar"></div>
-        <header class="jumbotron container">
-            <div class="row">
-                <div class="col-md-10 col-sm-9 col-xs-6">
-                    <h1>Reservar</h1>
-                    <p class="lead">Asegúrate de que tu pista favorita estará disponible</p>
-                </div>
-            </div>
-        </header>
+<!-- Parallax header -->
+<div class="parallax reservar"></div>
+<header class="jumbotron container">
+    <div class="row">
+        <div class="col-md-10 col-sm-9 col-xs-6">
+            <h1>Reservar</h1>
+            <p class="lead">Asegúrate de que tu pista favorita estará disponible</p>
+        </div>
+    </div>
+</header>
 
-        <form class="form-inline">
-            <label for="fecha">Fecha: </label>
-            <input id="fecha" class="form-control" type="date"/>
-            <button class="form-control btn btn-primary">Buscar</button>
-        </form>
-        <script src="views/js/parallax.js"></script>
+<form class="form-inline">
+    <label for="fecha">Fecha: </label>
+    <input ng-model="fecha" id="fecha" class="form-control" type="date"/>
+    <button ng-click="buscar()" class="form-control btn btn-primary">Buscar</button>
+
+</form>
+
+<br/>
+
+<form class="form-group">
+      <label for="pistas">Seleccione una opción:</label>
+      <select multiple class="form-control" id="pistas">
+        <option ng-repeat="pista in pistas">Reservar la pista número {{ pista.courtId }} - A las {{ pista.date | date : 'shortTime' }}</option>
+      </select>
+</form>
+
+<script src="views/js/parallax.js"></script>
