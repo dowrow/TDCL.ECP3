@@ -74,6 +74,15 @@ form .row {
   margin-bottom: 20px;
 }
 
+#caja1, #caja2 {
+    height: 60px;
+}
+
+.robot {
+    height: 50px;
+    width: 50px;
+}
+
 footer {
     background-color: #333333;
     min-height: 100px;

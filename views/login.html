@@ -3,6 +3,11 @@
     <div class="panel-body">
         <h1>Acceso: Usuario o correo</h1>
         <form class="form-horizontal col-md-4 col-md-offset-4">
+            <div id="error" class="hidden form-group alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span id="mensaje">{{ mensaje }}</span>
+            </div>
             <div class="form-group">
                 <label for="usuario">Usuario:</label>
                 <input ng-model="usuario" id="usuario" class="form-control" type="text" placeholder="Identificador de usuario"/>
@@ -15,14 +20,22 @@
                 <label for="clave">Clave:</label>
                 <input ng-model="clave" id="clave" class="form-control" type="password" placeholder="Clave"/>
             </div>
+
+            <div class="form-group">
+                <label for="clave">Arrastra el logo de una caja a otra:</label>
+                <div id="caja1" class="form-control text-center">
+                    <img src="views/img/upm.jpg" class="robot" draggable="true">
+                </div>
+                <br/>
+                <div id="caja2" class="form-control text-center"></div>
+            </div>
+
             <div class="form-group">
                 <input ng-click="login()" class="form-control btn btn-primary" type="submit"/ value="Acceder">
             </div>
-            <div id="error" class="hidden form-group alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="sr-only">Error:</span>
-                <span id="mensaje">{{ mensaje }}</span>
-            </div>
+
         </form>
     </div>
 </section>
+
+<script src="/views/js/draganddrop.js"></script>

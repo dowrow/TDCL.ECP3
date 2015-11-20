@@ -1,4 +1,4 @@
-/*global angular*/
+/*global angular, document*/
 /*jslint node: true*/
 'use strict';
 
@@ -12,21 +12,25 @@ app.controller('MenuController', function ($scope, $rootScope, $location) {
         return viewLocation === $location.path();
     };
 
-    $rootScope.$on('login', function(event, mass) {
-            $scope.loginText = 'Logout';
+    $rootScope.$on('login', function () {
+        $scope.loginText = 'Logout';
     });
 });
 
 app.controller('LoginController', function ($scope, $rootScope, $http) {
+
     var endpoint = "http://salonso.etsisi.upm.es/miw_serv/padel/conexion.php";
+
+    $scope.token = '';
 
     $scope.login = function () {
 
-        angular.element(document.querySelector('#error')).addClass('hidden');
-
         var parameters,
             id = $scope.usuario || $scope.correo,
-            password = $scope.clave;
+            password = $scope.clave,
+            contenidoCaja = angular.element(document.querySelector('#caja2')).html();
+
+        angular.element(document.querySelector('#error')).addClass('hidden');
 
         if (!id) {
             $scope.mensaje = 'Es necesario escribir el nombre de usuario o correo.';
@@ -40,24 +44,36 @@ app.controller('LoginController', function ($scope, $rootScope, $http) {
             return false;
         }
 
+        if (contenidoCaja.length < 1) {
+            $scope.mensaje = 'Es necesario que arrastre la imagen de una caja a otra.';
+            angular.element(document.querySelector('#error')).removeClass('hidden');
+            return false;
+        }
+
         parameters = {
             id: id,
             password: password
         };
 
+        /*jslint unparam: true*/
         $http.get(endpoint, { params: parameters })
-            .success(function (data) {
+            .success(function (data, status, headers) {
+
                 if (data.errorMessage !== 'none') {
                     $scope.mensaje = 'Error: ' + data.errorMessage;
                     angular.element(document.querySelector('#error')).removeClass('hidden');
                 } else {
-                    $scope.$emit('login', [1, 2, 3]);
+                    console.log('Recibido token: ' + headers('token'));
+                    $scope.token = headers('token');
+                    $scope.$emit('login');
                 }
             })
-            .error(function (data) {
+
+            .error(function () {
                 $rootScope.mensaje = 'Se produjo un error inesperado.';
                 angular.element(document.querySelector('#error')).removeClass('hidden');
             });
+        /*jslint unparam: false*/
     };
 });
 
