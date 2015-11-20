@@ -1,30 +1,38 @@
 
-<section class="panel panel-default">
+<section ng-controller="RegistroController" class="panel panel-default">
     <div class="panel-body">
         <h1>Registro de usuario</h1>
         <form class="form-horizontal col-md-4 col-md-offset-4">
+            <div id="error" class="hidden form-group alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span id="mensaje">{{ mensaje }}</span>
+            </div>
+            <div id="success" class="hidden form-group alert alert-success" role="alert">
+                <span id="mensaje">{{ mensajeRegistro }}</span>
+            </div>
             <div class="form-group">
                 <label for="usuario">Usuario:</label>
-                <input id="usuario" class="form-control" type="text" placeholder="Identificador de usuario"/>
+                <input ng-blur="comprobarUsername()" ng-model="usuario" id="usuario" class="form-control" type="text" placeholder="Identificador de usuario"/>
             </div>
             <div class="form-group">
                 <label for="correo">Correo:</label>
-                <input id="correo" class="form-control" type="email" placeholder="Email"/>
+                <input ng-blur="comprobarCorreo()" ng-model="correo" id="correo" class="form-control" type="email" placeholder="Email"/>
             </div>
             <div class="form-group">
                 <label for="clave">Clave:</label>
-                <input id="clave" class="form-control" type="password" placeholder="Clave"/>
+                <input ng-model="clave" id="clave" class="form-control" type="password" placeholder="Clave"/>
             </div>
             <div class="form-group">
                 <label for="repita-clave" >Repita clave:</label>
-                <input id="repita-clave" class="form-control" type="password" placeholder="Repita la clave"/>
+                <input ng-model="repitaClave" id="repita-clave" class="form-control" type="password" placeholder="Repita la clave"/>
             </div>
             <div class="form-group">
                 <label for="fecha">Fecha de nacimiento:</label>
-                <input id="fecha" class="form-control" type="date"/>
+                <input ng-model="fecha" id="fecha" class="form-control" type="date"/>
             </div>
             <div class="form-group">
-                <input class="form-control btn btn-primary" type="submit"/ value="Registrar">
+                <input ng-click="registrar()" class="form-control btn btn-primary" type="submit"/ value="Registrar">
             </div>
         </form>
     </div>
